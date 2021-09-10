@@ -9,9 +9,11 @@ import { JwtPayload } from '../users/dto/user.dto';
 @Injectable()
 export class SharedService {
   constructor() {}
+  //Creates hashedPassword for user using sha256 algo
   createHash = (stringToHash: string) =>
     crypto.createHash('sha256').update(stringToHash).digest('hex');
 
+  //Sign the JWT for authentication
   signJWT = (user: JwtPayload) => {
     const { email, _id } = user;
     return jwt.sign({ email, _id }, jwtConstants.secret, {

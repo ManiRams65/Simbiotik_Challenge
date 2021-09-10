@@ -68,6 +68,13 @@ export class UserLoginSuccessDTO {
   token: string;
 }
 
+/**
+ * USER_LOGIN_SUCCESS
+ * Success Response of USER REGISTER
+ *
+ * + Check for email already exist
+ *
+ */
 export class UserDto {
   _id?: ObjectId;
   email: string;
@@ -75,10 +82,24 @@ export class UserDto {
   phone_no: string;
 }
 
+/**
+ * FORGOT_PASSWORD_DTO
+ * Request Format for forgot Password
+ *
+ * + Check for email  exist
+ * + Check if user already requested for forgot password
+ *
+ */
 export class ForgotPasswordDto {
   mail: string;
 }
-
+/**
+ * RESET_PASSWORD_DTO
+ * Request Format for reset Password
+ *
+ * + Check for email  exist
+ *
+ */
 export class ResetPasswordDTO {
   new_password: string;
 }
