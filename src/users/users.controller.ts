@@ -48,7 +48,6 @@ export class UsersController {
     @Param('id') id: ObjectId,
     @Body() new_password: ResetPasswordDTO,
   ): Promise<UserDto> {
-    console.log(id, new_password);
     return this.usersService.resetPassword(id, new_password.new_password);
   }
 }
